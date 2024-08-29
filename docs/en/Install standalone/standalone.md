@@ -68,7 +68,7 @@ You will need at least 16 Gb of RAM and 5 Gb of available disk space.
 
 To install the latest version of Docker Desktop, follow
 the [instructions](https://docs.docker.com/desktop/windows/install/) on their
-web site.
+website.
 
 In the **System Requirements** section, choose WSL 2 backend, and follow the
 instructions from Microsoft to enable the feature and install WSL.
@@ -92,8 +92,7 @@ Invivoo's [DockerHub](https://hub.docker.com/u/xcomponent) repository, this may
 take a few minutes. After that, the containers are started with the `docker
 run` command. Subsequent runs will reuse the locally-stored images.
 
-When the command has finished executing, you should see an output like the
-following:
+When the command has finished executing, you should see an output similar to this:
 
 ``` console
  - Network appcontrol-compose_default                  Created                            0.8s
