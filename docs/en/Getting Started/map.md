@@ -3,12 +3,12 @@
 In AppControl, applications (also called maps) are described using an XML file.
 For AppControl, an aplication is a hierarchy of components.
 
-This file contains mainly the following informations:
+This file mainly contains the following informations:
 
-- **Component elements** described by a check command (mandatory), a start command (optional), a stop command (optional), a list of customs commands (optional)
+- **Component elements** described by a check command (mandatory), a start command (optional), a stop command (optional) and a list of customs commands (optional)
 - List of agents used to execute commands described above
 - Identity elements to run the following components for specific users
-- Scheduling elements to scedule start/stop commands
+- Scheduling elements to schedule start/stop commands
 
 A minimalist AppControl <em>Hello World</em> ARTEFACT:
 
@@ -134,11 +134,11 @@ These identities will be used by agents.
 
 | Attribute      | Description                                                                                                                                                                                                                                                                        |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name           | **Required** Name of the component (should be unique in the application                                                                                                                                                                                                                                                                           |
+| name           | **Required** Name of the component (should be unique in the application)                                                                                                                                                                                                                                                                           |
 | group          | **Optional** Name of the group. Used to group a set of components in the UI                                                                                                                                                                                                                                                                       |
 | hostref        | Value : string. Reference to the agent (see hosts tag). Mandatory if not set on the action                                                                                                                                                                                                                                                        |
 | authref        | Value : string. Reference to the agent identity (see auths tag). Mandatory if not set on the action                                                                                                                                                                                                                                               |
-| type           | **Optional** Used to display an icon on the map. An url to an image (png, jpeg or svg) can be set. Anyway you can use one of the following value: browser, cd, chip, data-information, devises, dollar, euro, file, green-thermometer, hdd, memflash, memory, middleware, network, orange-thermometer, pounds, process, service, tools, user, yen |
+| type           | **Optional** Used to display an icon on the map. A url to an image (png, jpeg or svg) can be set. You can use one of the following value: browser, cd, chip, data-information, devises, dollar, euro, file, green-thermometer, hdd, memflash, memory, middleware, network, orange-thermometer, pounds, process, service, tools, user, yen |
 | description    | **Optional** Value: string Label of the component in addition to the name                                                                                                                                                                                                                                                                         |
 | redirectoutput | **Optional** Value: True. If true, standard output will be parsed to find dynamic messages or dynamic components 																																																								 |                                                                                                                                                                                                                                                                                                                   |
 | checkFrequency | **Optional** Value: integer. Component check cycle frequency (in seconds). Default value is set at server configuration level                                                                                                                                                                                                                     |
@@ -174,8 +174,8 @@ These identities will be used by agents.
 </apps>
 ```
 
-The `father` tag creates a dependency on a component. The AppControl approach is based on the fact that child components have the knowledge of father(s).
-<br>Multiple fathers for a component are allowed.
+The `father` tag creates a dependency on a component. The AppControl approach is based on the fact that child components have the knowledge of parent(s).
+<br>Multiple parents for a component are allowed.
 <br>Be careful not to create a loop which is not allowed and generates an error during loading.
 
 #### The <em>action</em> TAG
@@ -219,7 +219,7 @@ The `action` tag is used to describe 4 kinds of actions:
 | value       | **Required** Command line to execute                                                                                                                                                                                                                                                                                                              |
 | retryTime   | **Optional** Value: integer. Time in seconds before retrying communication with the agent                                                                                                                                                                                                                                                         |
 | commandname | **Required** Display name / Identifier of the command                                                                                                                                                                                                                                                                                             |
-| visibility  | **Optional** Control the visibility of this custion action outside AppControl (in XC Scenario). If the value is Public, the AppControl worker will publish this action as a Scenario task. Default is Private, do not publish the action.                                                                                                                                                                                                                                                                                             |
+| visibility  | **Optional** Control the visibility of this custion action outside AppControl (in XC Scenario). If the value is Public, the AppControl user will publish this action as a Scenario task. Default is Private, do not publish the action.                                                                                                                                                                                                                                                                                             |
 | parameters  | **Optional** Used to display an icon on the map. An url to an image (png, jpeg or svg) can be set. Anyway you can use one of the following value: browser, cd, chip, data-information, devises, dollar, euro, file, green-thermometer, hdd, memflash, memory, middleware, network, orange-thermometer, pounds, process, service, tools, user, yen |
 | hostref     | **Optional** Value : string. Reference to the agent (see hosts tag). Mandatory if not set on the component                                                                                                                                                                                                                                        |
 | authref     | **Optional** Value : string. Reference to the agent identity (see auths tag). Mandatory if not set on the component                                                                                                                                                                                                                               |
@@ -300,4 +300,4 @@ In the tag, "parameters", several `parameter` tags will have the following attri
 
 You can refer to the [Quartz Scheduler](https://www.quartz-scheduler.net/documentation/quartz-3.x/tutorial/crontrigger.html#introduction) link to have the complete documentation of allowed cron expressions.
 
-As you can observe in the example above, you can be multiple cron expressions in the same file. You can schedule start/stop or customs actions.
+As you can observe in the example above, you can have multiple cron expressions in the same file. You can schedule start/stop or customs actions.
