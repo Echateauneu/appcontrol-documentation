@@ -21,7 +21,7 @@
 | Rocky Linux (EL)| rockylinux:8.8-minimal (Compatibility with RedHat 8)|docker| docker pull xcomponent/appcontrol-agent:latest-rockylinux|
 | Rocky Linux (EL)| almalinux:9.2-minimal (Compatibility with RedHat 9)|docker| docker pull xcomponent/appcontrol-agent:latest-rockylinux|
 
-All binaries versions are listed here: [All binaries versions](https://github.com/xcomponent/appcontrol-documentation/releases/)
+All binary versions are listed here: [All binaries versions](https://github.com/xcomponent/appcontrol-documentation/releases/)
 
 All docker versions are listed here: [All docker versions](
 https://hub.docker.com/r/xcomponent/appcontrol-agent/tags)
@@ -74,7 +74,7 @@ appcontrolagent has been uninstalled.
 
 ### Option 2. Run the agent in interactive mode from a prompt (cmd.exe)
 
-Run cmd.exe and the go the agent folder.
+Run cmd.exe and then go to the agent folder.
 
 ```console
 C:\appcontrol>xcAgent.exe --console
@@ -87,7 +87,7 @@ Copyright © Invivoo Software 2022
 
 If you need to communicate with the agent from another computer, you should need to create a firewall rule to open the agent's port. 
 
-In the case the agent's port is 12567, the command above creates the correct rule on the firewall.
+In this case the agent's port is 12567, the command above creates the correct rule on the firewall.
 
 Run cmd.exe (with Administrative permissions) and then execute the following command.
 
@@ -117,7 +117,7 @@ To install XComponent AppControl Agent under EL, untar the following [Alma tar.g
 The configuration file (** config.dat **) is located in the same directory.
 Refer to the agent configuration section to customize the configuration.
 
-Replace **/home/xc/xcagent** by your own installation folder.
+Replace **/home/xc/xcagent** with your own installation folder.
 
 ```console
 /home/xc/xcagent $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/xc/xcagent/libs
@@ -197,12 +197,12 @@ The default configuration file is name config.dat. It's located near the XCompon
 | logdirectory       | Agent's trace file recording directory.                                                                                                                                                                                                                                                                        |
 | tempdirectory      | Agent's working directory                                                                                                                                                                                                                                                                                      |
 | maxlogsizeinmo     | Maximum size before rotation of the trace file (In Megabytes)                                                                                                                                                                                                                                                  |
-| nbdaystodeletelogs | Retention period for trace files archived under logdirectory /logs-backup/ (In number of days)                                                                                                                                                                                                                 |
+| nbdaystodeletelogs | Retention period for trace files archived under logdirectory /logs-backup/ (In days)                                                                                                                                                                                                                           |
 | loglevel           | Log levels ('NONE', 'ERROR', 'INFO', 'TRACE')                                                                                                                                                                                                                                                                  |
-| executionthreshold | Maximum number of parallel executions for (Start/Stop/Custom actions). This parameter is not applied on check actions.                                                                                                                                                                                         |
+| executionthreshold | Maximum number of parallel executions for (Start/Stop/Custom actions). This parameter does not apply to check actions.                                                                                                                                                                                         |
 | trustedservers     | List of IP addresses, or Dns names of XComponent AppControl servers authorized to contact the agent (Can be empty)                                                                                                                                                                                             |
 | ignoretrustedservers     | Disable trusted server option                                                                                                                                                                                   |
-| sshhost            | This parameter allows the agent to perform an SSH session with the account specified in the configuration of the application. The file containing the private key to use is located in the 'sshkeydirectory' directory and bears the name of the targeted user.This property works exclusively on Linux agent. |
+| sshhost            | This parameter allows the agent to perform an SSH session with the account specified in the configuration of the application. The file containing the private key to use is located in the 'sshkeydirectory' directory and bears the name of the targeted user. This property works exclusively on Linux agent. |
 | sshkeydirectory    | Directory for storing Ssh private key files. The name of the expected files must be named with the name of the user targeted by the application configuration. The public key must be present in the ~/ssh/authorized_keys file of the remote account                                                          |
 
 ## Environment variables configuration
